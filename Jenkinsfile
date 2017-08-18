@@ -3,10 +3,16 @@ pipeline {
 
     stages {
         stage('Checkout repository') { 
-            sh 'docker --version'
+            steps{
+                sh 'docker --version'
+            }
+            
         }
         stage('Build') { 
-            sh './gradle test'
+            steps{
+                sh './gradle test'
+            }
+            
         }
     }
 }
