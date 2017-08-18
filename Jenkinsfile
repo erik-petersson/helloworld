@@ -3,10 +3,10 @@ pipeline {
 
     stages {
         stage('Checkout repository') { 
-            checkout scm
+            sh 'docker --version'
         }
         stage('Build') { 
-            sh docker build -t gradle:latest .
+            sh './gradle test'
         }
     }
 }
