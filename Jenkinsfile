@@ -6,7 +6,7 @@ pipeline {
             checkout scm
         }
         stage('Build') { 
-            ./gradlew build
+            sh docker build -t gradle:latest .
         }
     }
 }
