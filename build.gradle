@@ -5,6 +5,7 @@ buildscript {
 	
 	dependencies {
 		classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5'
+		classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.1.11'
 	}
 }
 
@@ -15,6 +16,7 @@ plugins {
   id 'java'
 }
 
+apply plugin: 'info.solidsoft.pitest'
 
 version = '1.0.0'
 
@@ -27,17 +29,14 @@ repositories {
 }
 
 ext {
-	
+	awsSdkVersion = '1.11.140'
     junitVersion = '4.12'
 }
 
 dependencies {
 
-	compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
-	compile group: 'io.dropwizard', name: 'dropwizard-jackson', version: dropwizardVersion
-    compile group: 'io.dropwizard', name: 'dropwizard-auth', version: dropwizardVersion
-	compile group: 'io.dropwizard.modules', name: 'dropwizard-flyway', version: flywayVersion
-	compile group: 'io.dropwizard', name: 'dropwizard-jdbi', version: dropwizardVersion
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: awsSdkVersion
+    compile group: 'com.amazonaws', name: 'aws-java-sdk-sts', version: awsSdkVersion
 	
 	
     testCompile group: 'junit', name: 'junit', version: junitVersion
