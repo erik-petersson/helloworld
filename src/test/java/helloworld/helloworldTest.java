@@ -7,11 +7,11 @@ import org.junit.Test;
 
 public class helloworldTest {
 
-    private helloworld sut;
+    private HelloWorld sut;
 
     @Before
     public void setUp() {
-        sut = new helloworld();
+        sut = new HelloWorld();
     }
 
     @Test
