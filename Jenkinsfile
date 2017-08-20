@@ -8,6 +8,7 @@ pipeline {
                 sh 'ls -all'
                 sh 'more gradle/wrapper/gradle-wrapper.properties'
                 sh 'more build.gradle'
+                sh 'chmod +x gradlew'
                 sh './gradlew clean build test'
             }
             
