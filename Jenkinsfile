@@ -2,18 +2,14 @@ pipeline {
     agent { label 'sonar' } 
 
     stages {
-        stage('sonar') {
+        stage('Build & Test') {
             steps{
                 checkout scm
-                sh 'ls -all'
-                sh 'more gradle/wrapper/gradle-wrapper.properties'
-                sh 'more build.gradle'
-                sh 'chmod +x gradlew'
                 sh './gradlew clean build test'
             }
             
         }
-        stage('sonar2') {
+        stage('SonarQube Analysis') {
             steps{
                 withSonarQubeEnv('sonarqube') {
                   // requires SonarQube Scanner for Gradle 2.1+
