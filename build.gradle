@@ -29,14 +29,10 @@ repositories {
 }
 
 ext {
-	awsSdkVersion = '1.11.140'
     junitVersion = '4.12'
 }
 
 dependencies {
-
-    compile group: 'com.amazonaws', name: 'aws-java-sdk-dynamodb', version: awsSdkVersion
-    compile group: 'com.amazonaws', name: 'aws-java-sdk-sts', version: awsSdkVersion
 	
 	
     testCompile group: 'junit', name: 'junit', version: junitVersion
@@ -52,7 +48,7 @@ sonarqube {
 
 
 artifactory {
-    contextUrl = 'http://artifactory:8081/artifactory'
+    contextUrl = 'http://localhost:8081/artifactory'
     
     resolve {
         repoKey = 'libs-release-local'
