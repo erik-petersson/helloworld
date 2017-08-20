@@ -45,7 +45,7 @@ sonarqube {
 
 
 artifactory {
-    contextUrl = 'http://localhost'
+    contextUrl = 'http://artifactory:8081'
     
     resolve {
         repoKey = 'libs-release-local'
