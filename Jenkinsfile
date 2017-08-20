@@ -1,16 +1,24 @@
 pipeline {
-    agent any 
+    agent { label 'sonar' } 
 
     stages {
-        stage('Checkout repository') { 
+        stage('sonar') {
             steps{
-                sh 'docker --version'
+                checkout scm
+                sh 'ls -all'
+                sh 'more gradle/wrapper/gradle-wrapper.properties'
+                sh 'more build.gradle'
+                sh './gradlew clean build test'
             }
             
         }
-        stage('Build') { 
+        stage('sonar2') {
             steps{
-                sh './gradle test'
+                withSonarQubeEnv('sonarqube') {
+                  // requires SonarQube Scanner for Gradle 2.1+
+                  // It's important to add --info because of SONARJNKNS-281
+                  sh './gradlew --info sonarqube'
+                }
             }
             
         }
