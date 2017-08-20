@@ -32,6 +32,14 @@ ext {
 }
 
 dependencies {
+
+	compile group: 'io.dropwizard', name: 'dropwizard-core', version: dropwizardVersion
+	compile group: 'io.dropwizard', name: 'dropwizard-jackson', version: dropwizardVersion
+    compile group: 'io.dropwizard', name: 'dropwizard-auth', version: dropwizardVersion
+	compile group: 'io.dropwizard.modules', name: 'dropwizard-flyway', version: flywayVersion
+	compile group: 'io.dropwizard', name: 'dropwizard-jdbi', version: dropwizardVersion
+	
+	
     testCompile group: 'junit', name: 'junit', version: junitVersion
 
 }
@@ -45,7 +53,7 @@ sonarqube {
 
 
 artifactory {
-    contextUrl = 'http://artifactory:8081'
+    contextUrl = 'http://artifactory:8081/artifactory'
     
     resolve {
         repoKey = 'libs-release-local'
