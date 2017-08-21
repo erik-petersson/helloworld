@@ -71,12 +71,12 @@ publishing {
 }
 
 artifactory {
-    contextUrl = "http://localhost:8081/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
+    contextUrl = "http://artifactory:8081/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
         repository {
             repoKey = 'gradle-dev-local'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
+            username = "$System.env.ARTIFACTORY_USERNAME"
+            password = "$System.env.ARTIFACTORY_PASSWORD"
             maven = true
             
         }
@@ -89,8 +89,8 @@ artifactory {
     resolve {
         repository {
             repoKey = 'gradle-dev'
-            username = "${artifactory_user}"
-            password = "${artifactory_password}"
+            username = "$System.env.ARTIFACTORY_USERNAME"
+            password = "$System.env.ARTIFACTORY_PASSWORD"
             maven = true
             
         }
