@@ -5,6 +5,7 @@ pipeline {
         stage('Build & Test') {
             steps{
                 checkout scm
+                def server = Artifactory.server 'Artifactory'
                 sh './gradlew clean build test pitest sonarqube artifactoryPublish'
             }
             
