@@ -59,7 +59,6 @@ sonarqube {
     property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build"
-    property "sonar.host.url", "$System.env.SONARQUBE_URL" //systemProp.sonar.host.url=http://localhost:9000
   }
 }
 
@@ -72,7 +71,7 @@ publishing {
 }
 
 artifactory {
-    contextUrl = "$System.env.ARTIFACTORY_URL"   //The base Artifactory URL if not overridden by the publisher/resolver
+    contextUrl = "$System.env.ARTIFACTORY_URL"   //The base Artifactory URL if not overridden by the//"http://localhost:8081/artifactory"//"$System.env.ARTIFACTORY_URL"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
         repository {
             repoKey = 'gradle-dev-local'
