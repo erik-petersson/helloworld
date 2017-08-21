@@ -75,8 +75,8 @@ artifactory {
     publish {
         repository {
             repoKey = 'gradle-dev-local'
-            username = "${ARTIFACTORY_USERNAME}"
-            password = "${ARTIFACTORY_PASSWORD}"
+            username = "$ARTIFACTORY_USERNAME"
+            password = "$ARTIFACTORY_PASSWORD"
             maven = true
             
         }
@@ -89,8 +89,8 @@ artifactory {
     resolve {
         repository {
             repoKey = 'gradle-dev'
-            username = "${ARTIFACTORY_USERNAME}"
-            password = "${ARTIFACTORY_PASSWORD}"
+            username = "$ARTIFACTORY_USERNAME"
+            password = "$ARTIFACTORY_PASSWORD"
             maven = true
             
         }
