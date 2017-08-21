@@ -72,7 +72,7 @@ publishing {
 }
 
 artifactory {
-    contextUrl = "http://artifactory:8081/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
+    contextUrl = "$System.env.ARTIFACTORY_URL"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
         repository {
             repoKey = 'gradle-dev-local'
