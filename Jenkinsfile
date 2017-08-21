@@ -5,7 +5,7 @@ pipeline {
         stage('Build & Test') {
             steps{
                 checkout scm
-                sh './gradlew clean build test pitest sonarqube artifactoryPublish'
+                sh './gradlew clean build test pitest sonarqube'
             }
             
         }
