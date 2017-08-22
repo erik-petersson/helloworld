@@ -5,17 +5,13 @@ pipeline {
         stage('Build & Test') {
             steps{
                 checkout scm
-                sh './gradlew clean build test pitest sonarqube artifactoryPublish'
+                
             }
             
         }
         stage('SonarQube Analysis') {
             steps{
-                withSonarQubeEnv('sonarqube') {
-                  // requires SonarQube Scanner for Gradle 2.1+
-                  // It's important to add --info because of SONARJNKNS-281
-                  sh './gradlew --info sonarqube'
-                }
+                sh './gradlew --info clean build test pitest sonarqube artifactoryPublish'
             }
             
         }
