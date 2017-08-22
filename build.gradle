@@ -59,6 +59,7 @@ sonarqube {
     property "sonar.projectKey", "org.sonarqube:java-gradle-simple"
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build"
+    property "sonar.host.url", "$System.env.SONARQUBE_URL"
   }
 }
 
