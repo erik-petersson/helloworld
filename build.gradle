@@ -60,6 +60,8 @@ sonarqube {
     property "sonar.pitest.mode", "reuseReport"
     property "sonar.pitest.reportsDirectory", "build"
     property "sonar.host.url", "$System.env.SONARQUBE_URL"
+    property "sonar.login", "$System.env.SONARQUBE_USERNAME"
+    property "sonar.password", "$System.env.SONARQUBE_PASSWORD"
   }
 }
 
