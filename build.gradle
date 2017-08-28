@@ -73,6 +73,9 @@ publishing {
     }
 }
 
+
+
+
 artifactory {
     contextUrl = "$System.env.ARTIFACTORY_URL"   //The base Artifactory URL if not overridden by the//"http://localhost:8081/artifactory"//"$System.env.ARTIFACTORY_URL"   //The base Artifactory URL if not overridden by the publisher/resolver
     publish {
